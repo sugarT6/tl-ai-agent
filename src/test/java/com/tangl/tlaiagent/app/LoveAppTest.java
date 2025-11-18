@@ -58,4 +58,34 @@ class LoveAppTest {
         String answer = loveApp.doChatWithRagAndRewrite(message);
         Assertions.assertNotNull(answer);
     }
+
+    @Test
+    void doChatWithTools() {
+
+        // 测试终端操作：执行代码
+        testMessage("执行任意一个终端命令操作");
+//
+//        // 测试文件操作：保存用户档案
+//        testMessage("保存我的恋爱档案为文件");
+
+//        // 测试 PDF 生成
+//        testMessage("生成一份‘七夕约会计划’PDF，包含餐厅预订、活
+//        动流程和礼物清单");
+    }
+
+    private void testMessage(String message) {
+        String chatId = UUID.randomUUID().toString();
+        String answer = loveApp.doChatWithTools(message, chatId);
+        Assertions.assertNotNull(answer);
+    }
+
+    @Test
+    void doChatWithMcp() {
+        String chatId = UUID.randomUUID().toString();
+        // 测试地图 MCP
+        String message = "帮我搜集一些适合约会地点的图片";
+        String answer =  loveApp.doChatWithMcp(message, chatId);
+        Assertions.assertNotNull(answer);
+    }
+
 }
