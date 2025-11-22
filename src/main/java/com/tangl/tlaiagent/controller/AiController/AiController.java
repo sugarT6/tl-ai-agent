@@ -37,7 +37,7 @@ public class AiController {
      * @param chatId
      * @return
      */
-    @GetMapping("/love_app/chat/sse/emitter")
+    @GetMapping("/love_app/chat/sse")
     public SseEmitter doChatWithLoveAppSseEmitter(String message, String chatId) {
         // 创建一个超时时间较长的 SseEmitter
         SseEmitter emitter = new SseEmitter(180000L); // 3分钟超时
